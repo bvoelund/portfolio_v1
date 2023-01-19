@@ -1,8 +1,14 @@
 import { AnimatePresence, AnimationControls, motion } from "framer-motion";
 import { SiCoderwall } from "react-icons/si";
+import {
+  RxCornerBottomLeft,
+  RxCornerBottomRight,
+  RxCornerTopLeft,
+  RxCornerTopRight,
+} from "react-icons/rx";
 import { flyInFromTop } from "../../types/transitions";
-import { HiOutlineMail } from "react-icons/hi";
-import { AiOutlineCloudDownload } from "react-icons/ai";
+import Lottie from "lottie-react";
+import astronautDark from "../../assets/lotties/scroll-down.json";
 
 type Props = {
   sectionRef: (node?: Element | null | undefined) => void;
@@ -18,47 +24,65 @@ export default function LandingInformation({ sectionRef, controls }: Props) {
         exit={"visible"}
         animate={controls}
         ref={sectionRef}
-        className="relative flex justify-center  opacity-100 lg:items-center"
+        className="relative opacity-100 lg:items-center"
       >
-        <SiCoderwall
+        <RxCornerTopLeft
           size={95}
-          className="absolute -left-20 top-10 -rotate-90 text-[#102770] opacity-30 dark:text-[#6bd6f0]"
+          className="absolute -left-24 -top-20 hidden text-lightBlue opacity-30 xl:block"
         />
 
-        <SiCoderwall
+        <RxCornerBottomLeft
           size={95}
-          className="absolute bottom-10 -right-10 rotate-90 text-[#102770]  opacity-30 dark:text-[#6bd6f0]"
+          className="absolute -left-24 -bottom-14 hidden text-lightBlue opacity-30 xl:block"
         />
-        <div className="flex h-full flex-col justify-center font-semibold">
-          <div className="flex items-end">
-            <h2 className="text-8xl font-bold text-[#102770] dark:text-[#6bd6f0]">
-              Hi,
-            </h2>
-            <h4 className="pl-1 text-3xl">my name is ...</h4>
-          </div>
-          <h1 className="whitespace-nowrap text-6xl">Benjamin Vølund,</h1>
-          <div className="flex items-end">
-            <h4 className="whitespace-nowrap text-3xl">and I'm a</h4>
-            <h3 className="whitespace-nowrap pl-2 text-5xl text-[#102770] dark:text-[#6bd6f0]">
-              Software Engineer
-            </h3>
-            <span className="text-5xl">.</span>
-          </div>
-          <h4 className="mt-8 whitespace-nowrap text-2xl">
-            Scroll down to read about my profile 🙎‍♂️
-          </h4>
-          <h4 className="mt-8 whitespace-nowrap text-2xl">
-            Enjoy your stay, and thanks for stopping by 🚀
-          </h4>
-          <div className="mt-8 flex w-full space-x-6">
-            <button className="flex w-fit items-center justify-center space-x-2 rounded-3xl border-4 border-[#102770] p-4 text-2xl text-[#102770] transition-all duration-300 ease-in-out hover:bg-[#102770] hover:text-white dark:border-[#6bd6f0] dark:bg-transparent dark:text-[#6bd6f0] dark:hover:bg-[#6bd6f0] dark:hover:text-dark">
-              <HiOutlineMail size={33} />
-              <span>Contact</span>
-            </button>
-            <button className="flex w-fit items-center justify-center space-x-2 rounded-3xl border-4 border-[#102770] p-4 text-2xl text-[#102770] transition-all duration-300 ease-in-out hover:bg-[#102770] hover:text-white dark:border-[#6bd6f0] dark:bg-transparent dark:text-[#6bd6f0] dark:hover:bg-[#6bd6f0] dark:hover:text-dark">
-              <AiOutlineCloudDownload size={33} />
-              <span>Resume</span>
-            </button>
+        <RxCornerTopRight
+          size={95}
+          className="absolute -top-20 -right-14 hidden text-lightBlue opacity-30 xl:block"
+        />
+
+        <RxCornerBottomRight
+          size={95}
+          className="absolute -bottom-14 -right-14 hidden text-lightBlue opacity-30 xl:block"
+        />
+
+        <div className="mx-10 flex items-center justify-center font-semibold">
+          <div className="flex flex-col items-start">
+            <div className="flex items-end">
+              <h2 className="text-3xl font-bold text-lightBlue md:text-4xl xl:text-5xl">
+                Hello there,
+              </h2>
+              <h4 className="pl-1 text-lg md:text-xl xl:text-2xl">
+                my name is...
+              </h4>
+            </div>
+            <h1 className="whitespace-nowrap text-3xl md:mb-2 md:text-4xl xl:text-5xl">
+              Benjamin Vølund,
+            </h1>
+            <div className="flex items-end">
+              <h4 className="whitespace-nowrap text-lg md:text-xl xl:text-2xl">
+                and I'm a
+              </h4>
+              <h3 className="whitespace-nowrap pl-2 text-3xl text-lightBlue md:text-4xl xl:text-5xl">
+                Software Engineer
+              </h3>
+              <span className="text-5xl">.</span>
+            </div>
+            <div className="my-4 flex w-full items-center justify-center lg:my-8">
+              <div className=" w-full rounded-l-2xl border-[1px] border-dashed border-lightBlue opacity-60" />
+              <div className="mx-4 h-7 min-h-[28px] w-7 min-w-[28px] rotate-45 rounded-lg border-[2px] border-lightBlue opacity-60" />
+              <div className="w-full rounded-l-2xl border-[1px] border-dashed border-lightBlue opacity-60" />
+            </div>
+            <h4 className="text-lg  md:text-xl xl:text-2xl">
+              I simply love coding, and building smart and creative solutions
+              for both myself and others.
+            </h4>
+            <div className="mt-4 flex w-full justify-center">
+              <Lottie
+                animationData={astronautDark}
+                loop
+                className="h-auto w-14 opacity-60"
+              />
+            </div>
           </div>
         </div>
       </motion.div>

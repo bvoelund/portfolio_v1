@@ -8,7 +8,7 @@ const useGetScrollPosition = () => {
       setScrollPosition(window.pageYOffset);
     };
     window.addEventListener("scroll", updatePosition);
-    updatePosition();
+    if (window.pageYOffset !== scrollPosition) updatePosition();
     return () => window.removeEventListener("scroll", updatePosition);
   }, []);
 

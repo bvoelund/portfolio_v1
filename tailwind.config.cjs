@@ -4,6 +4,9 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      width: {
+        128: "512px",
+      },
       keyframes: {
         float: {
           "0%": {
@@ -18,17 +21,16 @@ module.exports = {
         },
       },
       colors: {
-        lightOrange: "#F19E6B",
-        darkOrange: "#DE6B48",
-        lightBlue: "#43cea2",
-        darkBlue: "#185a9d",
-        dark: "#111827",
+        lightBlue: "#6bd6f0",
       },
       animation: {
         floating: "float 4s linear infinite",
       },
       screens: {
         "2xl": "1536px",
+      },
+      backgroundImage: {
+        space: "url('/src/assets/images/spacebackground.jpg')",
       },
     },
   },

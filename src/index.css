@@ -4,7 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.cantarell {
+.fredoka {
   font-family: Fredoka;
 }
 
@@ -26,6 +26,8 @@ html {
 
 body {
   min-height: 100vh;
+  overflow: overlay;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 
 img,
@@ -36,19 +38,19 @@ video {
   max-width: 100%;
 }
 
-.app-bg {
-  @apply bg-gradient-to-br from-gray-400 to-white;
-}
-
-.app-dark-bg {
-  @apply bg-gradient-to-br from-gray-700 to-[#111827];
-}
-
 ::selection {
-  @apply bg-[#102770] text-white dark:bg-[#6bd6f0] dark:text-dark;
+  @apply bg-[#6bd6f0] text-black;
 }
 
-.glass {
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-3xl bg-lightBlue bg-opacity-60;
+}
+
+/* .glass {
   background: rgba(16, 39, 112, 0.9);
   border-radius: 40px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
@@ -64,13 +66,13 @@ video {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(107, 214, 240, 1);
-}
+} */
 
 .menu-tooltip {
   @apply absolute left-0 bottom-14 m-2 w-auto min-w-max origin-center
   scale-0 rounded-md bg-white p-2 text-xs font-bold
-  text-dark shadow-xl
-  transition-all duration-100 dark:bg-dark dark:text-white;
+  text-slate-900 shadow-xl
+  transition-all duration-100 dark:bg-slate-900 dark:text-white;
 }
 
 .tester {
@@ -91,8 +93,48 @@ video {
 .gradient-corner-bg {
   background: linear-gradient(
     45deg,
-    rgba(16, 39, 112, 0.8),
+    rgba(16, 39, 112, 0.75),
     #102770,
-    rgba(16, 39, 112, 0.8)
+    rgba(16, 39, 112, 0.75)
   );
+}
+
+@media screen and (min-width: 1024px) {
+  .rotate-img {
+    -webkit-transform: perspective(800px) rotateY(25deg) scale(0.8)
+      rotateX(10deg);
+    transform: perspective(800px) rotateY(25deg) scale(0.8) rotateX(10deg);
+  }
+  .rotate-img-mirrored {
+    -webkit-transform: perspective(800px) rotateY(-25deg) scale(0.8)
+      rotateX(10deg);
+    transform: perspective(800px) rotateY(-25deg) scale(0.8) rotateX(10deg);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .rotate-img:hover {
+    -webkit-transform: perspective(800px) rotateY(-15deg) translateY(-50px)
+      rotateX(10deg) scale(1);
+    transform: perspective(800px) rotateY(-15deg) translateY(-50px)
+      rotateX(10deg) scale(1);
+  }
+  .rotate-img-mirrored:hover {
+    -webkit-transform: perspective(800px) rotateY(15deg) translateY(50px)
+      rotateX(10deg) scale(1);
+    transform: perspective(800px) rotateY(15deg) translateY(50px) rotateX(10deg)
+      scale(1);
+  }
+}
+
+.glow2 {
+  box-shadow: inset 0 0 30px 0 #fff, inset 20px 0 30px #ffd400,
+    inset -20px 0 30px red, inset 20px 0 300px #ff40d6,
+    inset -20px 0 300px #e3ff4b, 0 0 50px #fff, -10px 0 100px #fbff00,
+    10px 0 80px #f55;
+}
+.glow {
+  box-shadow: inset 0 0 50px #fff, inset 20px 0 80px #f0f,
+    inset -20px 0 80px #0ff, inset 20px 0 300px #f0f, inset -20px 0 300px #0ff,
+    0 0 50px #fff, -10px 0 80px #f0f, 10px 0 80px #0ff;
 }

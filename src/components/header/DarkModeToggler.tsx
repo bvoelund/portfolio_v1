@@ -13,12 +13,12 @@ export default function DarkModeToggler({
   return (
     <div
       onClick={() => setToggleDarkMode(!toggleDarkMode)}
-      className="z-20 cursor-pointer text-[#102770] transition duration-300 ease-in-out hover:scale-110 focus:outline-none dark:text-white dark:hover:text-[#6bd6f0]"
+      className="z-20 cursor-pointer transition duration-300 ease-in-out hover:scale-110 hover:text-[#6bd6f0] focus:outline-none"
     >
       {toggleDarkMode ? (
-        <TbMoonStars size={35} />
+        <TbMoonStars size={22} />
       ) : (
-        <MdOutlineWbSunny size={35} />
+        <MdOutlineWbSunny size={22} />
       )}
     </div>
   );

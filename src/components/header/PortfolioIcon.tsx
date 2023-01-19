@@ -32,7 +32,7 @@ export default function PortfolioIcon() {
       id="logo"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 100 100"
-      className="h-20 w-20"
+      className="h-14 w-14"
       initial="hidden"
       animate="visible"
     >

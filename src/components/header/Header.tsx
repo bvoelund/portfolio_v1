@@ -1,94 +1,64 @@
 import DarkModeToggler from "./DarkModeToggler";
-import { MdWorkOutline } from "react-icons/md";
-import { BsPersonLinesFill } from "react-icons/bs";
-import { HiOutlineMenuAlt3 } from "react-icons/hi";
-import { IoMdMusicalNotes } from "react-icons/io";
 import {
   AiOutlinePlayCircle,
-  AiOutlinePauseCircle,
   AiOutlineGithub,
   AiOutlineLinkedin,
 } from "react-icons/ai";
-import NavBarIcon from "./NavBarIcon";
 import PortfolioIcon from "./PortfolioIcon";
+import { AnimatePresence, motion, useAnimation } from "framer-motion";
+import { useRef } from "react";
+import { useInView } from "react-intersection-observer";
+import { headerFlyIn } from "../../types/transitions";
+import useGetScrollPosition from "../../hooks/useGetScrollPosition";
+import classNames from "classnames";
+import usePrevious from "../../hooks/usePrevious";
+import HeaderIcon from "./HeaderIcon";
+import { BsPause, BsPlay } from "react-icons/bs";
 
 type Props = {
   toggleDarkMode: boolean;
   setToggleDarkMode: (toggle: boolean) => void;
-  toggleSideBar: boolean;
-  setToggleSideBar: (state: boolean) => void;
 };
 
-export default function Header({
-  toggleDarkMode,
-  setToggleDarkMode,
-  toggleSideBar,
-  setToggleSideBar,
-}: Props) {
+export default function Header({ toggleDarkMode, setToggleDarkMode }: Props) {
+  const scrollPostion = useGetScrollPosition();
+  const prevScrollPosition = usePrevious(scrollPostion);
+  // sticky z-30 flex w-full transform flex-col rounded-b-2xl bg-gradient-to-tr from-gray-400 to-white shadow-2xl backdrop-blur backdrop-filter transition-all duration-500 ease-in-out dark:bg-gradient-to-tr dark:from-gray-700 dark:to-[#111827] md:flex-row
+
   return (
-    <nav className="dark:shadow-[20px 20px 60px #0e1421, -20px -20px 60px #141c2d] shadow-[20px 20px 60px #bebebe, -20px -20px 60px #ffffff] sticky top-0 z-50 flex w-full flex-col md:flex-row">
+    <nav
+      id="navbar"
+      className={classNames(
+        scrollPostion > prevScrollPosition ? "-top-32" : "top-0",
+        "sticky z-30 flex w-full transform flex-col bg-[#050F1D] bg-opacity-90 backdrop-blur backdrop-filter transition-all duration-500 ease-in-out md:flex-row"
+      )}
+    >
       <div
         className={
-          "flex w-full items-center justify-between px-8 py-2 opacity-100 transition duration-100 ease-in-out dark:border-none"
+          "flex w-full items-center justify-start space-x-4 rounded-b-2xl py-2 px-3 opacity-100 transition duration-100 ease-in-out dark:border-none md:px-8"
         }
       >
-        <PortfolioIcon />
-        {/* <div className="hidden items-center md:space-x-6 lg:flex lg:space-x-12">
-          <NavBarIcon
-            sectionRef="mywork-section"
-            icon={<AiOutlineFundProjectionScreen size={24} />}
-            text={"My Work"}
-          />
-          <NavBarIcon
-            sectionRef="technologies-section"
-            icon={<GiGearStickPattern size={24} />}
-            text={"Technologies"}
-          />
-          <NavBarIcon
-            sectionRef="experience-section"
-            icon={<MdWorkOutline size={24} />}
-            text={"Experience"}
-          />
-          <NavBarIcon
-            sectionRef="personal-section"
-            icon={<BsPersonLinesFill size={24} />}
-            text={"About me"}
-          />
-        </div> */}
-
-        <div className="flex items-center justify-center">
-          <div className="flex items-center justify-center space-x-3 border-r-2 border-[#102770] pr-4 dark:border-[#6bd6f0]">
-            <a
-              className="z-20 cursor-pointer text-[#102770] transition duration-100 ease-in-out hover:scale-110 focus:outline-none dark:text-white dark:hover:text-[#6bd6f0]"
-              href="https://github.com/bvoelund"
-              target="_blank"
-            >
-              <AiOutlineLinkedin
-                size={36}
-                className="cursor-pointer transition-all duration-150 ease-in-out hover:scale-110"
+        {/* <PortfolioIcon /> */}
+        <HeaderIcon />
+        {/* <div className="h-1/2 w-[2px] bg-white" />
+        <AnimatePresence>
+          <motion.div
+            className="flex items-center justify-center"
+            variants={headerFlyIn}
+            initial="hidden"
+            animate={"visible"}
+          >
+            <div className="flex items-center justify-center space-x-3">
+              <div className="z-20 cursor-pointer transition duration-300 ease-in-out hover:scale-110 hover:text-[#6bd6f0] focus:outline-none">
+                <AiOutlinePlayCircle size={22} />
+              </div>
+              <DarkModeToggler
+                toggleDarkMode={toggleDarkMode}
+                setToggleDarkMode={setToggleDarkMode}
               />
-            </a>
-            <a
-              className="z-20 cursor-pointer text-[#102770] transition duration-100 ease-in-out hover:scale-110 focus:outline-none dark:text-white dark:hover:text-[#6bd6f0]"
-              href="https://github.com/bvoelund"
-              target="_blank"
-            >
-              <AiOutlineGithub
-                size={36}
-                className="cursor-pointer transition-all duration-150 ease-in-out hover:scale-110"
-              />
-            </a>
-          </div>
-          <div className="flex items-center justify-center space-x-3 pl-4">
-            <div>
-              <AiOutlinePlayCircle size={30} />
             </div>
-            <DarkModeToggler
-              toggleDarkMode={toggleDarkMode}
-              setToggleDarkMode={setToggleDarkMode}
-            />
-          </div>
-        </div>
+          </motion.div>
+        </AnimatePresence> */}
       </div>
     </nav>
   );

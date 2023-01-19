@@ -46,6 +46,16 @@ export const flyInFromLeft: flyInXTransitionType = {
   hidden: { x: -100, opacity: 0 },
 };
 
+export const headerFlyIn: flyInYTransitionType = {
+  visible: {
+    y: 0,
+    opacity: 1,
+
+    transition: { duration: 1, delay: 1.2 },
+  },
+  hidden: { y: -100, opacity: 0 },
+};
+
 export type opacityTransitionType = {
   visible: {
     opacity: number;
@@ -87,3 +97,8 @@ export type flyInYTransitionType = {
     opacity: number;
   };
 };
+
+export type TransitionType =
+  | flyInYTransitionType
+  | flyInXTransitionType
+  | opacityTransitionType;
