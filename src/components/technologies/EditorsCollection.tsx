@@ -1,4 +1,4 @@
-import intellij from "../../assets/images/technologies/intellij.png";
+import intellij from "../../assets/images/technologies/intelliJ.png";
 import androidStudio from "../../assets/images/technologies/androidStudio.png";
 import { SiVisualstudio, SiVisualstudiocode } from "react-icons/si";
 import TechnologyPill from "./TechnologyPill";
