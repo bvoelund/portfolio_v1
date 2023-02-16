@@ -19,7 +19,7 @@ import { FaReact } from "react-icons/fa";
 import TechnologyPill from "./TechnologyPill";
 
 export default function LibraryFrameworkCollection() {
-  const pills = [
+  const libFrames = [
     <TechnologyPill
       header="React"
       icon={<FaReact color="#61dafb" size={24} />}
@@ -103,5 +103,5 @@ export default function LibraryFrameworkCollection() {
     />,
   ];
 
-  return <>{pills}</>;
+  return <>{libFrames}</>;
 }

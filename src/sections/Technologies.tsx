@@ -7,6 +7,8 @@ import coding from "../assets/images/coding.png";
 import { opacityVariants } from "../utils/transitions";
 import ProgrammingLanguagesCollection from "../components/technologies/ProgrammingLanguagesCollection";
 import ToolsCollection from "../components/technologies/ToolsCollection";
+import TechnologySection from "../components/technologies/TechnologySection";
+import EditorsCollection from "../components/technologies/EditorsCollection";
 
 export default function Technologies() {
   const [sectionRef, inView] = useInView({ delay: 1000 });
@@ -42,6 +44,7 @@ export default function Technologies() {
                   exit={"visible"}
                   animate={controls}
                   ref={sectionRef}
+                  key="technology-tl-border"
                   className="absolute -top-6 left-0 block h-16 w-16 rounded-tl-2xl border-t-4 border-l-4 border-yellow opacity-60 md:h-20 md:w-20"
                 />
 
@@ -52,8 +55,10 @@ export default function Technologies() {
                   exit={"visible"}
                   animate={controls}
                   ref={sectionRef}
+                  key="technology-br-border"
                   className="absolute -bottom-8 -right-2 h-16 w-16 rounded-br-2xl border-r-4 border-b-4 border-yellow opacity-60 md:-bottom-10 md:h-40 md:w-40"
                 />
+
                 <motion.div
                   variants={opacityVariants}
                   initial="hidden"
@@ -62,29 +67,27 @@ export default function Technologies() {
                   ref={sectionRef}
                   className="mx-6 mb-4 flex justify-center lg:mb-0"
                 >
-                  <img src={coding} className="h-auto w-full rounded-3xl" />
+                  <img
+                    src={coding}
+                    className="h-auto w-full rounded-3xl"
+                    alt="coding"
+                  />
                 </motion.div>
               </AnimatePresence>
             </div>
             <div className="relative z-10 flex w-full flex-col items-center space-y-8 text-end">
-              <h1 className="bg-gradient-to-l from-lightBlue to-yellow bg-clip-text fill-transparent text-3xl text-transparent">
-                Programming languages
-              </h1>
-              <div className="delay-400 grid translate-y-0 transform grid-cols-2 gap-3 opacity-100 transition-all duration-500 ease-out sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+              <TechnologySection title="Programming languages">
                 <ProgrammingLanguagesCollection />
-              </div>
-              <h1 className="mb-4 bg-gradient-to-br from-lightBlue to-yellow bg-clip-text fill-transparent text-3xl text-transparent">
-                Libraries and frameworks
-              </h1>
-              <div className="delay-400 grid translate-y-0 transform grid-cols-2 gap-3 opacity-100 transition-all duration-500 ease-out sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+              </TechnologySection>
+              <TechnologySection title="Libraries and frameworks">
                 <LibraryFrameworkCollection />
-              </div>
-              <h1 className="mb-4 bg-gradient-to-l from-lightBlue to-yellow bg-clip-text fill-transparent text-3xl text-transparent">
-                Tools
-              </h1>
-              <div className="delay-400 grid translate-y-0 transform grid-cols-2 gap-3 opacity-100 transition-all duration-500 ease-out sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+              </TechnologySection>
+              <TechnologySection title="Editors">
+                <EditorsCollection />
+              </TechnologySection>
+              <TechnologySection title="Tools">
                 <ToolsCollection />
-              </div>
+              </TechnologySection>
             </div>
           </div>
         </motion.div>

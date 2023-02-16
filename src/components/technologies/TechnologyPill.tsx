@@ -17,6 +17,7 @@ const TechnologyPill = ({ icon, header }: TechnologyPillType) => {
       controls.start("visible");
     }
   }, [controls, inView]);
+
   return (
     <AnimatePresence>
       <motion.div

@@ -33,9 +33,9 @@ export default function NavMenu() {
         exit={"visible"}
         animate={controls}
         ref={ref}
-        className="fixed right-0 left-0 bottom-2 z-50 mx-auto w-fit rounded-3xl bg-opacity-95 bg-gradient-to-br from-lightBlue  to-yellow p-[3px] text-white shadow-2xl backdrop-blur backdrop-filter transition-all duration-500 ease-in-out sm:bottom-4 sm:mx-auto md:bottom-10 md:rounded-3xl"
+        className="fixed right-0 left-0 bottom-1 z-50 mx-auto w-fit rounded-3xl bg-opacity-95 bg-gradient-to-br from-lightBlue  to-yellow p-[3px] text-white shadow-2xl backdrop-blur backdrop-filter transition-all duration-500 ease-in-out sm:bottom-4 sm:mx-auto md:bottom-10 md:rounded-3xl"
       >
-        <div className="flex w-full items-center justify-between space-x-3 rounded-3xl bg-dark px-4 opacity-100 transition duration-100  ease-in-out md:space-x-4">
+        <div className="flex w-full items-center justify-between space-x-5 rounded-3xl bg-dark px-4 opacity-100 transition duration-100  ease-in-out md:space-x-6">
           <NavMenuIcon
             sectionRef="personal-section"
             icon={<BsPersonLinesFill size={27} />}
