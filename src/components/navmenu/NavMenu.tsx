@@ -22,18 +22,17 @@ export default function NavMenu() {
       <motion.div
         variants={{
           visible: {
-            y: 0,
             opacity: 1,
 
-            transition: { duration: 1, delay: 1.5 },
+            transition: { duration: 0.5, delay: 2 },
           },
-          hidden: { y: 50, opacity: 0 },
+          hidden: { opacity: 0 },
         }}
         initial="hidden"
         exit={"visible"}
         animate={controls}
         ref={ref}
-        className="fixed right-0 left-0 bottom-1 z-50 mx-auto w-fit rounded-3xl bg-opacity-95 bg-gradient-to-br from-lightBlue  to-yellow p-[3px] text-white shadow-2xl backdrop-blur backdrop-filter transition-all duration-500 ease-in-out sm:bottom-4 sm:mx-auto md:bottom-10 md:rounded-3xl"
+        className="fixed right-0 left-0 bottom-2 z-50 mx-auto w-fit rounded-3xl bg-opacity-95 bg-gradient-to-br from-lightBlue  to-yellow p-[3px] text-white shadow-2xl backdrop-blur backdrop-filter transition-all duration-500 ease-in-out sm:bottom-4 sm:mx-auto md:bottom-10 md:rounded-3xl"
       >
         <div className="flex w-full items-center justify-between space-x-5 rounded-3xl bg-dark px-4 opacity-100 transition duration-100  ease-in-out md:space-x-6">
           <NavMenuIcon

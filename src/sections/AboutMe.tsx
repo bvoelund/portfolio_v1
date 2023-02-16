@@ -73,7 +73,7 @@ export default function AboutMe() {
             />
             <div className="mt-6 flex w-full justify-center lg:justify-start">
               <div className="flex flex-col space-y-4 whitespace-nowrap text-sm sm:w-full sm:flex-row sm:items-center sm:justify-evenly sm:space-y-0 md:text-base">
-                <div className="flex items-center space-x-1">
+                <div className="flex flex-col items-center space-x-1 md:flex-row">
                   <HiOutlineMail size={28} className="text-yellow" />
                   <a
                     onClick={() => window.open("mailto:bvoelund@hotmail.com")}
@@ -82,7 +82,7 @@ export default function AboutMe() {
                     bvoelund@hotmail.com
                   </a>
                 </div>
-                <div className="flex items-center space-x-1">
+                <div className="flex flex-col items-center space-x-1 md:flex-row">
                   <TbMapPin size={28} className="text-yellow" />
                   <a
                     href="https://www.google.com/maps/search/Silkeborg/@56.1762235,9.5457681,13.25z"
@@ -92,7 +92,7 @@ export default function AboutMe() {
                     Silkeborg, Denmark
                   </a>
                 </div>
-                <div className="flex items-center space-x-1">
+                <div className="flex flex-col items-center space-x-1 md:flex-row">
                   <HiOutlinePhone size={28} className="text-yellow" />
                   <a
                     href="tel:+4526159059"

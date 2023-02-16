@@ -35,7 +35,7 @@ export default function Technologies() {
       <AnimatePresence>
         <motion.div className="relative mx-auto mt-12 max-w-7xl rounded-3xl">
           <div className="flex w-full flex-col items-center md:flex-col ">
-            <div className="relative mb-16 w-4/6 transform opacity-100 transition-all delay-100 duration-500 ease-out">
+            <div className="relative mb-16 w-full transform opacity-100 transition-all delay-100 duration-500 ease-out md:w-4/6">
               <AnimatePresence>
                 {/* Top left border */}
                 <motion.div
@@ -45,7 +45,7 @@ export default function Technologies() {
                   animate={controls}
                   ref={sectionRef}
                   key="technology-tl-border"
-                  className="absolute -top-6 left-0 block h-16 w-16 rounded-tl-2xl border-t-4 border-l-4 border-yellow opacity-60 md:h-20 md:w-20"
+                  className="absolute -top-6 left-2 block h-16 w-16 rounded-tl-2xl border-t-4 border-l-4 border-yellow opacity-60 md:h-20 md:w-20"
                 />
 
                 {/* Bottom right border */}
@@ -56,7 +56,7 @@ export default function Technologies() {
                   animate={controls}
                   ref={sectionRef}
                   key="technology-br-border"
-                  className="absolute -bottom-8 -right-2 h-16 w-16 rounded-br-2xl border-r-4 border-b-4 border-yellow opacity-60 md:-bottom-10 md:h-40 md:w-40"
+                  className="absolute -bottom-8 right-2 h-16 w-16 rounded-br-2xl border-r-4 border-b-4 border-yellow opacity-60 md:-right-2 md:-bottom-10 md:h-40 md:w-40"
                 />
 
                 <motion.div
