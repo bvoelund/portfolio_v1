@@ -22,15 +22,23 @@ module.exports = {
       },
       colors: {
         lightBlue: "#6bd6f0",
+        dark: "#050F1D",
+        darker: "#050D18",
+        yellow: "#FFC857",
+        purple: "#6E07F3",
+        "3dShirtColor": "#4B8DC7",
       },
       animation: {
-        floating: "float 4s linear infinite",
+        "floating-slow": "float 7s linear infinite",
+        "floating-medium": "float 5.5s linear infinite",
+        "floating-normal": "float 4s linear infinite",
+        "floating-fast": "float 2s linear infinite",
       },
       screens: {
         "2xl": "1536px",
       },
       backgroundImage: {
-        space: "url('/src/assets/images/spacebackground.jpg')",
+        "layer-1": "url('/src/assets/dividers/darkToWhite.svg')",
       },
     },
   },

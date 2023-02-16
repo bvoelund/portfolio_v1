@@ -1,65 +1,64 @@
-import DarkModeToggler from "./DarkModeToggler";
-import {
-  AiOutlinePlayCircle,
-  AiOutlineGithub,
-  AiOutlineLinkedin,
-} from "react-icons/ai";
-import PortfolioIcon from "./PortfolioIcon";
-import { AnimatePresence, motion, useAnimation } from "framer-motion";
-import { useRef } from "react";
-import { useInView } from "react-intersection-observer";
-import { headerFlyIn } from "../../types/transitions";
-import useGetScrollPosition from "../../hooks/useGetScrollPosition";
-import classNames from "classnames";
-import usePrevious from "../../hooks/usePrevious";
+import { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
 import HeaderIcon from "./HeaderIcon";
-import { BsPause, BsPlay } from "react-icons/bs";
+import { FiGithub, FiLinkedin } from "react-icons/fi";
+import resume from "../../assets/documents/Resume_BenjaminVoelund.pdf";
+import { opacityVariants } from "../../utils/transitions";
 
-type Props = {
-  toggleDarkMode: boolean;
-  setToggleDarkMode: (toggle: boolean) => void;
-};
+// FIX INTRO ANIMATION
+export default function Header() {
+  const controls = useAnimation();
 
-export default function Header({ toggleDarkMode, setToggleDarkMode }: Props) {
-  const scrollPostion = useGetScrollPosition();
-  const prevScrollPosition = usePrevious(scrollPostion);
-  // sticky z-30 flex w-full transform flex-col rounded-b-2xl bg-gradient-to-tr from-gray-400 to-white shadow-2xl backdrop-blur backdrop-filter transition-all duration-500 ease-in-out dark:bg-gradient-to-tr dark:from-gray-700 dark:to-[#111827] md:flex-row
-
+  useEffect(() => {
+    controls.start("visible");
+  }, [controls]);
   return (
-    <nav
+    <header
       id="navbar"
-      className={classNames(
-        scrollPostion > prevScrollPosition ? "-top-32" : "top-0",
-        "sticky z-30 flex w-full transform flex-col bg-[#050F1D] bg-opacity-90 backdrop-blur backdrop-filter transition-all duration-500 ease-in-out md:flex-row"
-      )}
+      className="flex w-full transform flex-col bg-[#050F1D] text-white backdrop-blur backdrop-filter transition-all duration-500 ease-in-out md:flex-row"
     >
-      <div
-        className={
-          "flex w-full items-center justify-start space-x-4 rounded-b-2xl py-2 px-3 opacity-100 transition duration-100 ease-in-out dark:border-none md:px-8"
-        }
+      <motion.div
+        className="flex w-full items-center justify-between space-x-4 rounded-b-2xl py-2 px-3 opacity-100 transition duration-100 ease-in-out dark:border-none md:px-8"
+        variants={opacityVariants}
+        initial="hidden"
+        animate={controls}
+        exit="visible"
       >
-        {/* <PortfolioIcon /> */}
         <HeaderIcon />
-        {/* <div className="h-1/2 w-[2px] bg-white" />
-        <AnimatePresence>
-          <motion.div
-            className="flex items-center justify-center"
-            variants={headerFlyIn}
-            initial="hidden"
-            animate={"visible"}
-          >
+        <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center space-x-8">
             <div className="flex items-center justify-center space-x-3">
-              <div className="z-20 cursor-pointer transition duration-300 ease-in-out hover:scale-110 hover:text-[#6bd6f0] focus:outline-none">
-                <AiOutlinePlayCircle size={22} />
-              </div>
-              <DarkModeToggler
-                toggleDarkMode={toggleDarkMode}
-                setToggleDarkMode={setToggleDarkMode}
-              />
+              <a href="https://github.com/bvoelund" target="_blank">
+                <FiGithub
+                  size={24}
+                  className="transition duration-300 ease-in-out hover:text-[#6bd6f0]"
+                />
+              </a>
+              <a href="https://www.linkedin.com/in/bvoelund/" target="_blank">
+                <FiLinkedin
+                  size={24}
+                  className=" transition duration-300 ease-in-out hover:text-[#6bd6f0]"
+                />
+              </a>
             </div>
-          </motion.div>
-        </AnimatePresence> */}
-      </div>
-    </nav>
+            <div className="hidden items-center justify-center space-x-3 md:flex">
+              <a
+                onClick={() => window.open("mailto:bvoelund@hotmail.com")}
+                className="transion cursor-pointer rounded-lg border-[3px] border-yellow p-2 font-semibold text-yellow underline-offset-4 transition duration-300 ease-in-out hover:border-lightBlue hover:text-lightBlue"
+              >
+                Contact
+              </a>
+              <a
+                href={resume}
+                target="_blank"
+                className="cursor-pointer rounded-lg border-[3px] border-yellow p-2 font-semibold text-yellow underline-offset-4 transition duration-300 ease-in-out hover:border-lightBlue hover:text-lightBlue"
+              >
+                Resume
+              </a>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </header>
   );
 }

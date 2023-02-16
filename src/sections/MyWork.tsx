@@ -1,21 +1,31 @@
-import React from "react";
+import { useAnimation } from "framer-motion";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+import SectionTitle from "../components/SectionTitle";
+import WorkCardCollection from "../components/mywork/WorkCardCollection";
 
 export default function MyWork() {
-  // bg-gradient-to-b from-[#0D506D] to-[#118AB2]
+  const [sectionRef, inView] = useInView({ delay: 1000 });
+  const controls = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
   return (
-    <div className="-mt-2 flex  min-h-screen flex-col items-center justify-center ">
-      {/* <div className="flex">
-        <div className="">
-          <img
-            className="rotate-img max-h-80 max-w-[200px] rounded-2xl opacity-100 shadow-2xl blur-0 transition-all duration-500 ease-linear lg:max-h-96 lg:max-w-2xl"
-            src="https://ik.imagekit.io/onyedika/slide/pipar_peinACEKO.png?ik-sdk-version=javascript-1.4.3&updatedAt=1651255256618"
-          />
-        </div>
+    <section
+      className="relative flex w-full flex-col items-center justify-center"
+      ref={sectionRef}
+      id="mywork-section"
+    >
+      <div className="flex w-5/6 items-center justify-center md:w-1/2 xl:w-5/12">
+        <SectionTitle title="My Work" reverse />
       </div>
-      <img
-        className="rotate-img-mirrored max-h-80 max-w-[200px] rounded-2xl opacity-100 shadow-2xl blur-0 transition-all duration-500 ease-linear lg:max-h-96 lg:max-w-2xl"
-        src="https://ik.imagekit.io/onyedika/slide/pipar_peinACEKO.png?ik-sdk-version=javascript-1.4.3&updatedAt=1651255256618"
-      /> */}
-    </div>
+      <div className="dense relative mx-auto mt-10 grid w-auto max-w-7xl grid-cols-1 gap-10 p-6 sm:grid-cols-2 xl:grid-cols-3">
+        <WorkCardCollection />
+      </div>
+    </section>
   );
 }
