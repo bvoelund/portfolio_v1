@@ -26,6 +26,7 @@ export default function ExperienceCard({
       controls.start("visible");
     }
   }, [controls, inView]);
+
   return (
     <AnimatePresence>
       <motion.div

@@ -1,15 +1,11 @@
 import { BsPersonLinesFill } from "react-icons/bs";
 import { MdWorkOutline } from "react-icons/md";
-import { BsChat } from "react-icons/bs";
 import { GiGearStickPattern } from "react-icons/gi";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 import NavMenuIcon from "./NavMenuIcon";
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
-
-//fixed right-0 left-0 bottom-0 z-50 mx-2 w-fit transform rounded-3xl border-2 border-[#102770] bg-opacity-80 bg-gradient-to-bl from-gray-400 to-white px-4 text-[#102770] shadow-2xl backdrop-blur backdrop-filter transition-all duration-500 ease-in-out dark:border-[#6bd6f0] dark:bg-opacity-90 dark:bg-gradient-to-bl dark:from-gray-700 dark:to-[#111827] dark:text-[#6bd6f0] sm:bottom-4 sm:mx-auto md:bottom-10 md:rounded-3xl
-//bg-[#050F1D]
 
 export default function NavMenu() {
   const [ref, inView] = useInView({ delay: 1000 });

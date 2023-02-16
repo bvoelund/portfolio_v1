@@ -2,10 +2,8 @@ import { ReactNode } from "react";
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import { opacityVariants } from "../../utils/transitions";
 import { SiGithub } from "react-icons/si";
 import { HiOutlineExternalLink } from "react-icons/hi";
-import { FiFolder } from "react-icons/fi";
 
 type Props = {
   status: "Done ✔️" | "In Progress ✍️";
@@ -34,6 +32,7 @@ export default function WorkCard({
       controls.start("visible");
     }
   }, [controls, inView]);
+
   return (
     <AnimatePresence>
       <motion.div

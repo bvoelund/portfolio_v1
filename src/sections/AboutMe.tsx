@@ -48,7 +48,6 @@ export default function AboutMe() {
     }
   }, [controls, inView]);
 
-  //  bg-gradient-to-b from-[#081527] to-[#0B334A]
   return (
     <section
       className="relative flex w-full flex-col items-center"

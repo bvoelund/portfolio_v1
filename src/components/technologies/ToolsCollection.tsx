@@ -1,33 +1,12 @@
-import {
-  SiDotnet,
-  SiGit,
-  SiGraphql,
-  SiHeroku,
-  SiHtml5,
-  SiJavascript,
-  SiJira,
-  SiMongodb,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiRedux,
-  SiSass,
-  SiTailwindcss,
-  SiVercel,
-} from "react-icons/si";
-import { FaAtlassian, FaReact } from "react-icons/fa";
+import { SiGit, SiHeroku, SiVercel } from "react-icons/si";
+import { FaAtlassian } from "react-icons/fa";
 import TechnologyPill from "./TechnologyPill";
 import jenkins from "../../assets/images/technologies/jenkins.png";
 import postman from "../../assets/images/technologies/postman.svg";
 import intellij from "../../assets/images/technologies/intellij.png";
 import blender from "../../assets/images/technologies/blender.png";
 import figma from "../../assets/images/technologies/figma.svg";
-import slack from "../../assets/images/technologies/slack.png";
-import {
-  SiBlender,
-  SiDocker,
-  SiVisualstudio,
-  SiVisualstudiocode,
-} from "react-icons/si";
+import { SiDocker, SiVisualstudio, SiVisualstudiocode } from "react-icons/si";
 
 export default function ToolsCollection() {
   const pills = [

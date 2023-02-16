@@ -5,13 +5,13 @@ import { FiGithub, FiLinkedin } from "react-icons/fi";
 import resume from "../../assets/documents/Resume_BenjaminVoelund.pdf";
 import { opacityVariants } from "../../utils/transitions";
 
-// FIX INTRO ANIMATION
 export default function Header() {
   const controls = useAnimation();
 
   useEffect(() => {
     controls.start("visible");
   }, [controls]);
+
   return (
     <header
       id="navbar"

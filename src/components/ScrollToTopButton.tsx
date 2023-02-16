@@ -1,7 +1,4 @@
 import classNames from "classnames";
-import { AiOutlineArrowUp } from "react-icons/ai";
-import { FiArrowUp } from "react-icons/fi";
-import { BiUpArrow } from "react-icons/bi";
 import useGetScrollPosition from "../hooks/useGetScrollPosition";
 import { TbArrowBigTop } from "react-icons/tb";
 

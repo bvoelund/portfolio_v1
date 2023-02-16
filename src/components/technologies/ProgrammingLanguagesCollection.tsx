@@ -1,23 +1,9 @@
-import jest from "../../assets/images/technologies/jest.svg";
 import csharp from "../../assets/images/technologies/c_sharp.svg";
 import typescript from "../../assets/images/technologies/typescript.svg";
 import css from "../../assets/images/technologies/css.svg";
 import html from "../../assets/images/technologies/html.png";
 import scss from "../../assets/images/technologies/scss.png";
-import {
-  SiCss3,
-  SiDotnet,
-  SiGraphql,
-  SiHtml5,
-  SiJavascript,
-  SiMongodb,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiRedux,
-  SiSass,
-  SiTailwindcss,
-} from "react-icons/si";
-import { FaReact } from "react-icons/fa";
+import { SiJavascript } from "react-icons/si";
 import TechnologyPill from "./TechnologyPill";
 
 export default function ProgrammingLanguagesCollection() {

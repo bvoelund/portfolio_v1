@@ -5,18 +5,14 @@ import bootstrap from "../../assets/images/technologies/bootstrap.png";
 import antd from "../../assets/images/technologies/antd.png";
 import headlessUI from "../../assets/images/technologies/headlessUi.png";
 import {
-  SiChakraui,
   SiDotnet,
   SiFramer,
   SiGraphql,
-  SiHtml5,
-  SiJavascript,
   SiMaterialui,
   SiMongodb,
   SiNextdotjs,
   SiNodedotjs,
   SiRedux,
-  SiSass,
   SiTailwindcss,
 } from "react-icons/si";
 import { FaReact } from "react-icons/fa";
