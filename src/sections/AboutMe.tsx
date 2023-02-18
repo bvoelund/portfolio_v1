@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 import me from "../assets/images/me.png";
 import SectionTitle from "../components/SectionTitle";
 import { opacityVariants } from "../utils/transitions";
-import getAge from "../utils/getAge";
+import { getAge } from "../utils/getAge";
 import { BsPerson } from "react-icons/bs";
 import { MdOutlineMapsHomeWork } from "react-icons/md";
 import { HiOutlineMail, HiOutlinePhone } from "react-icons/hi";
@@ -160,7 +160,7 @@ export default function AboutMe() {
                   />
                   <AboutMeItem
                     text={`My name is Benjamin Vølund and I'm a
-                    ${getAge("01-09-1996")} year old developer from Denmark.`}
+                    ${getAge("01/09/1996")} year old developer from Denmark.`}
                   />
                   <AboutMeItem
                     text="I have a degree as a Software Engineer from Aarhus
