@@ -10,6 +10,7 @@ import { MdOutlineMapsHomeWork } from "react-icons/md";
 import { HiOutlineMail, HiOutlinePhone } from "react-icons/hi";
 import { TbMapPin } from "react-icons/tb";
 import { SlGameController } from "react-icons/sl";
+import { config } from "../config";
 
 type AboutMeItemProps = {
   text: string;
@@ -76,10 +77,16 @@ export default function AboutMe() {
                 <div className="flex flex-col items-center space-x-1 md:flex-row">
                   <HiOutlineMail size={28} className="text-yellow" />
                   <a
-                    onClick={() => window.open("mailto:bvoelund@hotmail.com")}
+                    onClick={() =>
+                      window.open(
+                        `mailto:${
+                          config.email.name + "@" + config.email.domain
+                        }`
+                      )
+                    }
                     className="cursor-pointer underline underline-offset-4 transition duration-300 ease-in-out active:text-lightBlue md:hover:text-lightBlue"
                   >
-                    bvoelund@hotmail.com
+                    {config.email.name + "@" + config.email.domain}
                   </a>
                 </div>
                 <div className="flex flex-col items-center space-x-1 md:flex-row">
@@ -95,10 +102,25 @@ export default function AboutMe() {
                 <div className="flex flex-col items-center space-x-1 md:flex-row">
                   <HiOutlinePhone size={28} className="text-yellow" />
                   <a
-                    href="tel:+4526159059"
+                    href={`${
+                      "tel:" +
+                      "+45" +
+                      config.phoneNumber.number1 +
+                      config.phoneNumber.number2 +
+                      config.phoneNumber.number3 +
+                      config.phoneNumber.number4
+                    }`}
                     className="cursor-pointer underline underline-offset-4 transition duration-300 ease-in-out active:text-lightBlue md:hover:text-lightBlue"
                   >
-                    +45 26 15 90 59
+                    {"+45" +
+                      " " +
+                      config.phoneNumber.number1 +
+                      " " +
+                      config.phoneNumber.number2 +
+                      " " +
+                      config.phoneNumber.number3 +
+                      " " +
+                      config.phoneNumber.number4}
                   </a>
                 </div>
               </div>

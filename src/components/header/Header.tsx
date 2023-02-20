@@ -4,6 +4,7 @@ import HeaderIcon from "./HeaderIcon";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 import resume from "../../assets/documents/Resume_BenjaminVoelund.pdf";
 import { opacityVariants } from "../../utils/transitions";
+import { config } from "../../config";
 
 export default function Header() {
   const controls = useAnimation();
@@ -43,7 +44,11 @@ export default function Header() {
             </div>
             <div className="hidden items-center justify-center space-x-3 md:flex">
               <a
-                onClick={() => window.open("mailto:bvoelund@hotmail.com")}
+                onClick={() =>
+                  window.open(
+                    `mailto:${config.email.name + "@" + config.email.domain}`
+                  )
+                }
                 className="transion cursor-pointer rounded-lg border-[3px] border-yellow p-2 font-semibold text-yellow underline-offset-4 transition duration-300 ease-in-out hover:border-lightBlue hover:text-lightBlue"
               >
                 Contact
