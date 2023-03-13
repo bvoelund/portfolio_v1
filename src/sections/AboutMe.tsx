@@ -202,7 +202,7 @@ export default function AboutMe() {
                     }
                   />
                   <AboutMeItem
-                    text="Outside work I'm also huge nerd, and I spend a lot of time
+                    text="Outside work I'm also a huge nerd, and I spend a lot of time
                       improving my programming skills and knowledge."
                   />
                   <AboutMeItem

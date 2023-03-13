@@ -27,10 +27,6 @@ export default function Technologies() {
     >
       <div className="mt-10 flex w-5/6 flex-col items-center justify-center md:w-1/2 lg:justify-start xl:w-5/12">
         <SectionTitle title="Technologies" />
-        <p className="mt-4 text-lg">
-          I always aspire to learn something new, but below are a lot of the
-          technologies that I prefer and have worked with throughout my career.
-        </p>
       </div>
       <AnimatePresence>
         <motion.div className="relative mx-auto mt-12 max-w-7xl rounded-3xl">
