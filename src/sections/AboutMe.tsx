@@ -231,7 +231,7 @@ export default function AboutMe() {
                     components of success."
                   />
                   <AboutMeItem
-                    text="Contribute to a positive work environment by socializing
+                    text="I contribute to a positive work environment by socializing
                     with my colleagues at the office or over a beer."
                   />
                 </div>
