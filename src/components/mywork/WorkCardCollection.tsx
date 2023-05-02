@@ -36,7 +36,7 @@ export default function WorkCardCollection() {
       host={null}
       repo="https://github.com/bvoelund/portfolio_v1"
       status="Done ✔️"
-      content="The portfolio that you're currently beholding. Used as a opportunity to play with new technologies and libraries."
+      content="The portfolio that you're currently beholding. Used as an opportunity to play with new technologies and libraries."
       title="Portfolio V1"
       techUsed={[
         <FaReact color="#61dafb" size={24} />,
