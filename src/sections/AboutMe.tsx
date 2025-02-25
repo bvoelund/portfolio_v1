@@ -73,7 +73,7 @@ export default function AboutMe() {
               className="w-full select-none rounded-3xl object-cover"
             />
             <div className="mt-6 flex w-full justify-center lg:justify-start">
-              <div className="flex flex-col space-y-4 whitespace-nowrap text-sm sm:w-full sm:flex-row sm:items-center sm:justify-evenly sm:space-y-0 md:text-base">
+              {/* <div className="flex flex-col space-y-4 whitespace-nowrap text-sm sm:w-full sm:flex-row sm:items-center sm:justify-evenly sm:space-y-0 md:text-base">
                 <div className="flex flex-col items-center space-x-1 md:flex-row">
                   <HiOutlineMail size={28} className="text-yellow" />
                   <a
@@ -123,7 +123,7 @@ export default function AboutMe() {
                       config.phoneNumber.number4}
                   </a>
                 </div>
-              </div>
+              </div> */}
             </div>
           </motion.div>
           <AnimatePresence>
@@ -196,24 +196,6 @@ export default function AboutMe() {
 
                 <div className="flex flex-col space-y-2">
                   <AboutMeTitle
-                    text="Sparetime"
-                    icon={
-                      <SlGameController size={32} className="text-yellow" />
-                    }
-                  />
-                  <AboutMeItem
-                    text="Outside work I'm also a huge nerd, and I spend a lot of time
-                      improving my programming skills and knowledge."
-                  />
-                  <AboutMeItem
-                    text="I enjoy gaming, collecting Legos, playing football and
-                    spending time with friends and family."
-                  />
-                  <AboutMeItem text="I'm a proud dad-to-be, which is very exciting! " />
-                </div>
-
-                <div className="flex flex-col space-y-2">
-                  <AboutMeTitle
                     text="In the workplace"
                     icon={
                       <MdOutlineMapsHomeWork
@@ -234,6 +216,23 @@ export default function AboutMe() {
                     text="I contribute to a positive work environment by socializing
                     with my colleagues at the office or over a beer."
                   />
+                </div>
+                <div className="flex flex-col space-y-2">
+                  <AboutMeTitle
+                    text="Sparetime"
+                    icon={
+                      <SlGameController size={32} className="text-yellow" />
+                    }
+                  />
+                  <AboutMeItem
+                    text="Outside work I'm also a huge nerd, and I spend a lot of time
+                      improving my programming skills and knowledge."
+                  />
+                  <AboutMeItem
+                    text="I enjoy gaming, collecting Legos, playing football and
+                    spending time with friends and family."
+                  />
+                  {/* <AboutMeItem text="I love spending time with my fiance, and my son" /> */}
                 </div>
               </motion.div>
             </div>

@@ -81,26 +81,26 @@ export default function LibraryFrameworkCollection() {
       icon={<SiMongodb color="#12924f" size={24} />}
       key="mongodb"
     />,
-    <TechnologyPill
-      header="Ant Design"
-      icon={<img src={antd} className="h-6 w-6" />}
-      key="antDesign"
-    />,
-    <TechnologyPill
-      header="Headless UI"
-      icon={<img src={headlessUI} className="h-6 w-auto" />}
-      key="headlessUi"
-    />,
-    <TechnologyPill
-      header="Bootstrap"
-      icon={<img src={bootstrap} className="h-6 w-auto" />}
-      key="bootstrap"
-    />,
-    <TechnologyPill
-      header="Material UI"
-      icon={<SiMaterialui color="#017fff" size={24} />}
-      key="materialUI"
-    />,
+    // <TechnologyPill
+    //   header="Ant Design"
+    //   icon={<img src={antd} className="h-6 w-6" />}
+    //   key="antDesign"
+    // />,
+    // <TechnologyPill
+    //   header="Headless UI"
+    //   icon={<img src={headlessUI} className="h-6 w-auto" />}
+    //   key="headlessUi"
+    // />,
+    // <TechnologyPill
+    //   header="Bootstrap"
+    //   icon={<img src={bootstrap} className="h-6 w-auto" />}
+    //   key="bootstrap"
+    // />,
+    // <TechnologyPill
+    //   header="Material UI"
+    //   icon={<SiMaterialui color="#017fff" size={24} />}
+    //   key="materialUI"
+    // />,
   ];
 
   return <>{libFrames}</>;

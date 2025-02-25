@@ -9,6 +9,7 @@ import ProgrammingLanguagesCollection from "../components/technologies/Programmi
 import ToolsCollection from "../components/technologies/ToolsCollection";
 import TechnologySection from "../components/technologies/TechnologySection";
 import EditorsCollection from "../components/technologies/EditorsCollection";
+import OverallTechs from "../components/technologies/OverallTechs";
 
 export default function Technologies() {
   const [sectionRef, inView] = useInView({ delay: 1000 });
@@ -72,9 +73,13 @@ export default function Technologies() {
               </AnimatePresence>
             </div>
             <div className="relative z-10 flex w-full flex-col items-center space-y-8 text-end">
-              <TechnologySection title="Programming languages">
+              <OverallTechs />
+              {/* <TechnologySection title="Programming languages">
                 <ProgrammingLanguagesCollection />
               </TechnologySection>
+              <div className="flex w-full justify-center">
+                <p className="text-center">... and more!</p>
+              </div>
               <TechnologySection title="Libraries and frameworks">
                 <LibraryFrameworkCollection />
               </TechnologySection>
@@ -83,7 +88,7 @@ export default function Technologies() {
               </TechnologySection>
               <TechnologySection title="Tools">
                 <ToolsCollection />
-              </TechnologySection>
+              </TechnologySection> */}
             </div>
           </div>
         </motion.div>

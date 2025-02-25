@@ -25,31 +25,31 @@ export default function ProgrammingLanguagesCollection() {
       icon={<img src={css} className="h-6 w-6" />}
       key="css"
     />,
-    <TechnologyPill
-      header="SCSS"
-      icon={<img src={scss} className="h-6 w-6" />}
-      key="scss"
-    />,
-    <TechnologyPill
-      header="C#"
-      icon={<img src={csharp} className="h-6 w-6" />}
-      key="cSharp"
-    />,
-    <TechnologyPill
-      header="HTML 5"
-      icon={<img src={html} className="h-6 w-6" />}
-      key="html5"
-    />,
+    // <TechnologyPill
+    //   header="SCSS"
+    //   icon={<img src={scss} className="h-6 w-6" />}
+    //   key="scss"
+    // />,
+    // <TechnologyPill
+    //   header="C#"
+    //   icon={<img src={csharp} className="h-6 w-6" />}
+    //   key="cSharp"
+    // />,
+    // <TechnologyPill
+    //   header="HTML 5"
+    //   icon={<img src={html} className="h-6 w-6" />}
+    //   key="html5"
+    // />,
     <TechnologyPill
       header="Java"
       icon={<img src={java} className="h-7 w-7" />}
       key="java"
     />,
-    <TechnologyPill
-      header="Python"
-      icon={<img src={python} className="h-6 w-6" />}
-      key="python"
-    />,
+    // <TechnologyPill
+    //   header="Python"
+    //   icon={<img src={python} className="h-6 w-6" />}
+    //   key="python"
+    // />,
   ];
 
   return <>{languages}</>;

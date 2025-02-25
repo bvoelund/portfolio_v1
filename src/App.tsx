@@ -14,12 +14,12 @@ export default function App() {
       <ScrollToTopButton />
       <NavMenu />
 
-      <div className="flex flex-col space-y-12 pb-20 lg:space-y-0">
+      <div className="flex flex-col space-y-12 pb-32 lg:space-y-0">
         <Landing />
         <AboutMe />
         <Experience />
         <Technologies />
-        <MyWork />
+        {/* <MyWork /> */}
       </div>
     </div>
   );

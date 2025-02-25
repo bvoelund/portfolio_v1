@@ -50,11 +50,11 @@ export default function NavMenu() {
             icon={<GiGearStickPattern size={27} />}
             text={"Technologies"}
           />
-          <NavMenuIcon
+          {/* <NavMenuIcon
             sectionRef="mywork-section"
             icon={<AiOutlineFundProjectionScreen size={27} />}
             text={"My Work"}
-          />
+          /> */}
         </div>
       </motion.div>
     </AnimatePresence>
